@@ -12,6 +12,12 @@ package com.queserasera.militarycalc;
  import android.widget.ProgressBar;
  import android.widget.TextView;
 
+ import com.google.android.gms.ads.AdRequest;
+ import com.google.android.gms.ads.AdView;
+ import com.google.android.gms.ads.MobileAds;
+ import com.google.android.gms.ads.initialization.InitializationStatus;
+ import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
  import java.util.Date;
 
 public class MainActivity extends Activity {
@@ -28,6 +34,8 @@ public class MainActivity extends Activity {
     private int mStartYear, mStartMonth, mStartDay;
     private int mEndYear, mEndMonth, mEndDay;
     private SharedPreferences appData;
+    private AdView mAdViewTop;
+    //private AdView mAdViewBottom;
 
     /** Called when the activity is first created. */
     @Override
@@ -47,6 +55,19 @@ public class MainActivity extends Activity {
             }
         });
         load();
+
+        // 광고 불러오기
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdViewTop = findViewById(R.id.ad_view_top);
+        //mAdViewBottom = findViewById(R.id.ad_view_bottom);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdViewTop.loadAd(adRequest);
+        //mAdViewBottom.loadAd(adRequest);
     }
 
     // 설정값을 불러오는 함수

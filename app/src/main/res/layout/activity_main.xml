@@ -1,125 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation = "vertical"
     tools:context=".MainActivity">
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="5"/>
-    <ImageView
-        android:id="@+id/settingIcon"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:src="@drawable/setting_icon"
-        android:layout_weight="1"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"/>
-
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_view_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center|top"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="4"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/untilMessage"
+        android:layout_height="match_parent"
+        android:orientation = "vertical"
+        >
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2019. 07. 01. 까지"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            />
-        <TextView
-            android:id="@+id/dDay"
+            android:layout_height="0px"
+            android:layout_weight="5.5"/>
+        <ImageView
+            android:id="@+id/settingIcon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="D-0"
-            android:textAlignment="center"
-            android:textSize="50dp" />
-    </LinearLayout>
+            android:layout_height="0px"
+            android:src="@drawable/setting_icon_opacity"
+            android:layout_weight="1"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1">
-        <TextView
-            android:id="@+id/percentage"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="0%"
+            android:layout_height="0px"
+            android:layout_weight="4"
             android:layout_gravity="center"
-            android:textAlignment="center"/>
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/untilMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2019. 07. 01. 까지"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:id="@+id/dDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D-0"
+                android:textAlignment="center"
+                android:textSize="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/percentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="50%"
+                android:layout_gravity="center"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Space
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <ProgressBar
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:max="10000"
+                android:progress="3000"
+                android:progressBackgroundTint="#dddddd"
+                android:progressTint="#aaaaff"
+                android:id="@+id/progress" />
+            <Space
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="0.3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Space
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="0000.00.00"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="0000.00.00"
+                android:textSize="15dp"
+                android:textAlignment="textEnd"/>
+            <Space
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="4.5"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <Space
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        <ProgressBar
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="8"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:max="10000"
-            android:progress="3000"
-            android:progressBackgroundTint="#dddddd"
-            android:progressTint="#aaaaff"
-            android:id="@+id/progress" />
-        <Space
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.3"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <Space
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/startDate"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:text="0000.00.00"
-            android:textSize="15dp"/>
-        <TextView
-            android:id="@+id/endDate"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:text="0000.00.00"
-            android:textSize="15dp"
-            android:textAlignment="textEnd"/>
-        <Space
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="5"/>
-
-</LinearLayout>
+</FrameLayout>
