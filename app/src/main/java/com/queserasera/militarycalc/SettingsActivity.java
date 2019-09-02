@@ -173,7 +173,7 @@ public class SettingsActivity extends Activity {
     public void finish(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        overridePendingTransition(0,0);
+        overridePendingTransition(0,R.anim.fadeout);
         super.finish();
     }
 }
