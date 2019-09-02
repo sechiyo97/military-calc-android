@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MilitaryCalc</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="admob_app_id">ca-app-pub-6823524961524860~7917082538</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6823524961524860/1351674185</string>
+    <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>
+</resources>
